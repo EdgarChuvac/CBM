@@ -37,6 +37,7 @@ body {
     radial-gradient(circle at top left, rgba(23, 55, 94, 0.09), transparent 30%),
     radial-gradient(circle at top right, rgba(192, 57, 43, 0.08), transparent 28%),
     var(--fondo);
+  font-size: 14px;
 }
 
 button,
@@ -278,9 +279,9 @@ textarea {
 }
 
 .dashboard-content {
-  max-width: 1480px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 26px 28px 42px;
+  padding: 28px 32px;
 }
 
 .page-section {
@@ -333,17 +334,17 @@ textarea {
 
 .page-title {
   margin: 0 0 6px;
-  color: var(--azul);
+  color: var(--gris-oscuro);
   font-family: 'Barlow Condensed', 'Barlow', sans-serif;
-  font-size: clamp(2.1rem, 2.8vw, 3.1rem);
-  line-height: 1;
-  letter-spacing: -0.03em;
+  font-size: 26px;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
 }
 
 .page-subtitle {
   margin: 0 0 24px;
   color: var(--gris);
-  font-size: 1.02rem;
+  font-size: 13px;
 }
 
 .notice {
@@ -424,10 +425,10 @@ textarea {
 .card {
   background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(23, 55, 94, 0.08);
-  border-radius: 18px;
-  padding: 18px 20px 20px;
+  border-radius: 8px;
+  padding: 20px 24px;
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .nested-card {
@@ -448,7 +449,7 @@ textarea {
   margin-bottom: 16px;
   padding-bottom: 10px;
   border-bottom: 1px solid #e6ecf3;
-  font-size: 0.85rem;
+  font-size: 13px;
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -471,7 +472,10 @@ textarea {
   gap: 14px;
 }
 
-.form-grid,
+.form-grid {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
 .form-grid-2,
 .vitals-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -488,13 +492,30 @@ textarea {
 .campo {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 5px;
 }
 
 .campo label,
 .field-label {
-  font-weight: 800;
-  color: var(--gris-oscuro);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--gris);
+}
+
+.campo input:not([type='checkbox']):not([type='radio']),
+.campo select,
+.campo textarea {
+  padding: 9px 12px;
+  border: 1.5px solid #bdc3c7;
+  border-radius: 5px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 13px;
+}
+
+.campo textarea {
+  min-height: 80px;
 }
 
 .campo select,
@@ -519,7 +540,7 @@ textarea {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
 }
 
@@ -561,8 +582,7 @@ textarea {
 
 .table-wrap {
   overflow-x: auto;
-  border-radius: 14px;
-  border: 1px solid #e6ecf3;
+  border-radius: 8px;
 }
 
 table {
@@ -574,16 +594,16 @@ table {
 th {
   background: var(--gris-oscuro);
   color: #fff;
-  padding: 12px 14px;
+  padding: 10px 14px;
   text-transform: uppercase;
-  font-size: 0.72rem;
+  font-size: 11px;
   letter-spacing: 0.08em;
   text-align: left;
   white-space: nowrap;
 }
 
 td {
-  padding: 12px 14px;
+  padding: 10px 14px;
   border-bottom: 1px solid #eef2f6;
   vertical-align: top;
 }

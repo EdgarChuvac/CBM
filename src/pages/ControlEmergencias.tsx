@@ -643,6 +643,7 @@ export default function ControlEmergencias() {
   }, [bodega])
 
   const selectedGlasgow = totalGlasgow({ glasgow: serviceForm.glasgow })
+  const showLegacyServiceMarkup = false
 
   const openNotice = (kind: Notice['kind'], message: string) => setNotice({ kind, message })
 
@@ -1288,7 +1289,7 @@ export default function ControlEmergencias() {
               <button type="button" className="btn btn-secondary btn-sm" onClick={handleGenerateServiceNumber}>🔢 Generar N° auto</button>
             </div>
             <div className="status-row">{serviceValidation.length ? <span className={badgeClass('yellow')}>Pendiente: {serviceValidation.join(', ')}</span> : <span className={badgeClass('green')}>Formulario listo para guardar</span>}</div>
-            {false && <>
+            {showLegacyServiceMarkup && <>
             <section className="card">
               <div className="card-titulo">Personal del turno y unidad</div>
               <div className="form-grid">
